@@ -8,7 +8,7 @@ public:
   // Preconditions: None.
   // Postconditions: Initializes the dateType object with the provided day,
   // month, and year values.
-  dateType(int day = 1, int month = 1, int year = 1900);
+  dateType(int month = 1, int day = 1, int year = 1900);
   // Preconditions: None.
   // Postconditions: Returns the current day of the dateType object.
   int getDay();
@@ -37,7 +37,7 @@ public:
   // Preconditions: day, month, and year are valid values (e.g., month is in the
   // range 1-12, and year is a positive value). Postconditions: Sets the date of
   // the dateType object to the specified day, month, and year.
-  void setDate(int day, int month, int year);
+  void setDate(int month, int day, int year);
   // Preconditions: None.
   // Postconditions: Prints the current date represented by the dateType object.
   void printDate();

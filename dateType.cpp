@@ -3,7 +3,7 @@
 
 using namespace std;
 
-dateType::dateType(int d, int mon, int yr) { setDate(d, mon, yr); };
+dateType::dateType(int mon, int d, int yr) { setDate(mon, d, yr); };
 
 int dateType::getDay() { return day; };
 
@@ -11,7 +11,7 @@ int dateType::getMonth() { return month; };
 
 int dateType::getYear() { return year; };
 
-void dateType::setDate(int d, int mon, int yr) {
+void dateType::setDate(int mon, int d, int yr) {
   if (yr >= 1900 && mon <= 12 && d >= 1 && d <= daysInMonth(mon, yr)) {
     day = d;
     month = mon;
@@ -20,6 +20,7 @@ void dateType::setDate(int d, int mon, int yr) {
     day = 1;
     month = 1;
     year = 1900;
+    cout << "Cannot set date. Resetting to 1-1-1900." << endl;
   }
 };
 
