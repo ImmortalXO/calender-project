@@ -4,7 +4,6 @@ using namespace std;
 
 class extDateType : public dateType {
 private:
-  static const string monthNames[13];
   string monString;
 
 public:
@@ -21,5 +20,5 @@ public:
   void printLongMonthYear();
   // Preconditions: None
   // Postconditions: Sets the month to a string based on the number.
-  void setMonString();
+  void setMonString(string &monString);
 };
