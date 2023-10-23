@@ -13,9 +13,11 @@ extDateType::extDateType(int month, int day, int year)
 }
 
 void extDateType::printLongDate() {
-  cout << getMonth() << " " << getMonth() << ", " << getYear();
+  cout << monString << " " << getDay() << ", " << getYear();
 };
 
 void extDateType::printLongMonthYear() {
-  cout << getMonth() << " " << getYear();
+  cout << monString << " " << getYear();
 };
+
+void extDateType::setMonString() { monString = monthNames[getMonth()]; }
