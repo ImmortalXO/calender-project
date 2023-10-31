@@ -1,3 +1,5 @@
+#pragma once
+
 class dateType {
 private:
   int day;

@@ -3,13 +3,13 @@
 
 using namespace std;
 
-string monthNames[13] = {
+string extDateType::monthNames[13] = {
     "",     "January", "February",  "March",   "April",    "May",     "June",
     "July", "August",  "September", "October", "November", "December"};
 
 extDateType::extDateType(int month, int day, int year)
     : dateType(month, day, year) {
-  setMonString(monthNames[month]);
+  monString = monthNames[month];
 }
 
 void extDateType::printLongDate() {
@@ -20,4 +20,4 @@ void extDateType::printLongMonthYear() {
   cout << monString << " " << getYear();
 };
 
-void extDateType::setMonString(string &monStr) { monString = monStr; }
+void extDateType::setMonString(string mon) { monString = mon; }

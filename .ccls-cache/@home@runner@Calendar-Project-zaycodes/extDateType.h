@@ -1,3 +1,6 @@
+#ifndef EXTDATETYPE_H
+#define EXTDATETYPE_H
+
 #include "dateType.h"
 #include <string>
 using namespace std;
@@ -7,6 +10,7 @@ private:
   string monString;
 
 public:
+  static string monthNames[13];
   // Constructor
   // Preconditions: None
   // Postconditions: Initializes the extDateType object with the provided day,
@@ -20,5 +24,7 @@ public:
   void printLongMonthYear();
   // Preconditions: None
   // Postconditions: Sets the month to a string based on the number.
-  void setMonString(string &monString);
+  void setMonString(string mon);
 };
+
+#endif

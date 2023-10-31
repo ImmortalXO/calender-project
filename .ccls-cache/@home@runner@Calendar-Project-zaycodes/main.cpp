@@ -1,45 +1,23 @@
-#include "extDateType.h"
+#include "calendarType.h"
 #include <iostream>
 
 using namespace std;
 
 int main() {
-  extDateType dateObj;
-  extDateType customDateObj(6, 23, 2023);
-
-  cout << "Default constructor: ";
-  dateObj.printDate();
-  cout << endl;
-
-  cout << "Constructor: ";
-  customDateObj.printDate();
-  cout << endl;
-
-  int daysPassed = customDateObj.daysPassed();
-  cout << "Number of days passed: " << daysPassed;
-  cout << endl;
-
-  int daysRemaining = customDateObj.daysRemaining();
-  cout << "Number of days remaining: " << daysRemaining;
-  cout << endl;
-
-  int daysInMonth = customDateObj.daysInMonth(customDateObj.getMonth(),
-                                              customDateObj.getYear());
-  cout << "Number of days in month: " << daysInMonth;
-  cout << endl;
-
-  customDateObj.setFutureDate(15);
-  cout << "After 15 days, the date will be: ";
-  customDateObj.printDate();
-  cout << endl;
-
-  string monthString = "July";
-  customDateObj.setMonString(monthString);
-  customDateObj.printDate();
-  cout << endl;
-  customDateObj.printLongDate();
-  cout << endl;
-  customDateObj.printLongMonthYear();
-
+  int month, year;
+  string keepGoing = "y";
+  while (keepGoing == "y") {
+    cout << "Enter a month (1-12): ";
+    cin >> month;
+    cout << "Enter a year (4-Digits): ";
+    cin >> year;
+    calendarType cal(month, year);
+    cal.printCalendar();
+    cout << "Want to print another calendar? (y/n): " << endl;
+    cin >> keepGoing;
+  }
+  for (char &c : keepGoing) {
+    c = tolower(c);
+  }
   return 0;
 }

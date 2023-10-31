@@ -1,3 +1,5 @@
+#ifndef DAYTYPE_H
+#define DAYTYPE_H
 #include <string>
 using namespace std;
 
@@ -40,4 +42,6 @@ public:
   // Preconditions: None.
   // Postconditions: The current day is printed to the console.
   void printDay();
+  static const string &getDayNames(int dayIndex) { return dayNames[dayIndex]; }
 };
+#endif
