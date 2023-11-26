@@ -74,3 +74,17 @@ int dateType::daysPassed() {
 int dateType::daysRemaining() {
   return (isLeapYear() ? 366 : 365) - daysPassed();
 };
+
+void dateType::setMonth(int mon) {
+  if (mon < 1 || mon > 12) {
+    throw invalidMonth();
+  }
+  month = mon;
+}
+
+void dateType::setYear(int yr) {
+  if (yr < 1900) {
+    throw invalidYear();
+  }
+  year = yr;
+}

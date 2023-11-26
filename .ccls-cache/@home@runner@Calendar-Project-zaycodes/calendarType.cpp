@@ -1,5 +1,6 @@
 #include "calendarType.h"
 #include "dayType.h"
+#include <algorithm>
 #include <cassert>
 #include <cmath>
 #include <iomanip>
@@ -9,8 +10,6 @@ using namespace std;
 
 calendarType::calendarType(int mon, int yr) {
   string defaultDay = "Monday";
-  assert(mon >= 1 && mon <= 12);
-  assert(yr >= 1900);
   firstDate.setDate(mon, 1, yr);
   firstDate.setMonString(firstDate.monthNames[mon]);
   firstDay.setDay(defaultDay);
@@ -96,19 +95,17 @@ void calendarType::printCalendarTitle() {
 
 // int calendarType::getYear() { return year; };
 
-// void calendarType::setMonth(int mon) {
-//   assert(mon >= 1 && mon <= 12);
-//   month = mon;
-//   firstDate.setDate(month, 1, year);
-//   setFirstDayOfMonth();
-// }
+void calendarType::setMonth(int mon) {
+  month = mon;
+  firstDate.setDate(month, 1, year);
+  setFirstDayOfMonth();
+}
 
-// void calendarType::setYear(int yr) {
-//   assert(yr >= 1900);
-//   year = yr;
-//   firstDate.setDate(month, 1, year);
-//   setFirstDayOfMonth();
-// }
+void calendarType::setYear(int yr) {
+  year = yr;
+  firstDate.setDate(month, 1, year);
+  setFirstDayOfMonth();
+}
 
 void calendarType::printCalendar() {
   printCalendarTitle();
